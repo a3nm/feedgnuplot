@@ -523,6 +523,7 @@ sub pruneOldData
 sub plotStoredData
 {
   my ($xmin, $xmax) = @_;
+  $xmin = 0 if $xmin < 0;
   print PIPE "set xrange [$xmin:$xmax]\n" if defined $xmin;
 
   # get the options for those curves that have any data
